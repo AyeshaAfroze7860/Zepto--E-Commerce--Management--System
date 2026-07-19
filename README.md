@@ -15,3 +15,8 @@
   #### • Admin dashboard for managing products and orders
   #### • Sales and inventory report generation
   #### • Technologies Used
+## ER Diagram
+
+<img width="1441" height="792" alt="ER DIAGRAM COMPLETE DIAGRAM-Page-1" src="https://github.com/user-attachments/assets/165d165f-3239-435d-bbf4-c3ed7f6f8ed5" />
+
+
