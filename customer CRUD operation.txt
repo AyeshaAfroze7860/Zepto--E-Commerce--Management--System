@@ -1,0 +1,288 @@
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+        101 AYESHA               ayesha@gmail.com     9876543210
+12, Anna Nagar, Chennai
+2543
+
+        102 POOJA                pooja@gmail.com      8765987413
+45, Gandhi Road, Tambaram
+5742
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+
+        103 SHINY                shiny@gmail.com      7986235712
+78, MG Road, Coimbatore
+9345
+
+        104 RIYAVALLI            riya@gmail.com       7625381937
+23, Cross Street, Velachery
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+7253
+
+        105 AKSHAYA              akshu@gmail.com      9123456789
+56, Bharathi Nagar, Madurai
+8642
+
+        106 ASHWINI              ashu@gmail.com       9012345678
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+18, Lake View Road, Salem
+3815
+
+        107 BHAVADHARANI         bhava1@gmail.com     9887766554
+9, Nehru Street, Trichy
+5294
+
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+        108 RUPA                 rupa2@gmail.com      9445566778
+41, Gandhi Nagar, Erode
+6437
+
+        109 VARALAKSMI           var3@gmail.com       9365472810
+67, Temple Road, Tirunelveli
+7821
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+
+        110 PRIYA                priya2@gmail.com     9090909090
+31, Park Avenue, Vellore
+9156
+
+
+10 rows selected.
+
+
+1 row updated.
+
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+        101 AYESHA               ayesha@gmail.com     9998887776
+12, Anna Nagar, Chennai
+2543
+
+        102 POOJA                pooja@gmail.com      8765987413
+45, Gandhi Road, Tambaram
+5742
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+
+        103 SHINY                shiny@gmail.com      7986235712
+78, MG Road, Coimbatore
+9345
+
+        104 RIYAVALLI            riya@gmail.com       7625381937
+23, Cross Street, Velachery
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+7253
+
+        105 AKSHAYA              akshu@gmail.com      9123456789
+56, Bharathi Nagar, Madurai
+8642
+
+        106 ASHWINI              ashu@gmail.com       9012345678
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+18, Lake View Road, Salem
+3815
+
+        107 BHAVADHARANI         bhava1@gmail.com     9887766554
+9, Nehru Street, Trichy
+5294
+
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+        108 RUPA                 rupa2@gmail.com      9445566778
+41, Gandhi Nagar, Erode
+6437
+
+        109 VARALAKSMI           var3@gmail.com       9365472810
+67, Temple Road, Tirunelveli
+7821
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+
+        110 PRIYA                priya2@gmail.com     9090909090
+31, Park Avenue, Vellore
+9156
+
+
+10 rows selected.
+
+
+1 row deleted.
+
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+        101 AYESHA               ayesha@gmail.com     9998887776
+12, Anna Nagar, Chennai
+2543
+
+        102 POOJA                pooja@gmail.com      8765987413
+45, Gandhi Road, Tambaram
+5742
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+
+        103 SHINY                shiny@gmail.com      7986235712
+78, MG Road, Coimbatore
+9345
+
+        104 RIYAVALLI            riya@gmail.com       7625381937
+23, Cross Street, Velachery
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+7253
+
+        105 AKSHAYA              akshu@gmail.com      9123456789
+56, Bharathi Nagar, Madurai
+8642
+
+        106 ASHWINI              ashu@gmail.com       9012345678
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+18, Lake View Road, Salem
+3815
+
+        107 BHAVADHARANI         bhava1@gmail.com     9887766554
+9, Nehru Street, Trichy
+5294
+
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+        108 RUPA                 rupa2@gmail.com      9445566778
+41, Gandhi Nagar, Erode
+6437
+
+        109 VARALAKSMI           var3@gmail.com       9365472810
+67, Temple Road, Tirunelveli
+7821
+
+CUSTOMER_ID CUSTOMER_NAME        EMAIL                PHONE_NUMBER
+----------- -------------------- -------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+PASSWORD
+----------
+
+
+9 rows selected.
