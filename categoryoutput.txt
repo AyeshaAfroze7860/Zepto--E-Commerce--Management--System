@@ -1,0 +1,21 @@
+Table created.
+
+1 row created.
+
+1 row created.
+
+1 row created.
+
+1 row created.
+
+1 row created.
+
+CATEGORY_ID CATEGORY_NAME                  DESCRIPTION
+----------- ------------------------------ ------------------------------
+          1 FRUITS                         Fresh fruits
+          2 VEGETABLES                     Fresh vegetables
+          3 DAIRY                          Milk and dairy products
+          4 SNACKS                         Snacks and biscuits
+          5 BEVERAGES                      Juices and soft drinks
+
+5 rows selected.
