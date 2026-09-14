@@ -1,0 +1,166 @@
+ CREATE TABLE CATEGORY(
+  2      CATEGORY_ID NUMBER PRIMARY KEY,
+  3      CATEGORY_NAME VARCHAR2(30),
+  4      DESCRIPTION VARCHAR2(50)
+  5  );
+
+Table created.
+
+SQL> CREATE TABLE PRODUCT(
+  2      PRODUCT_ID NUMBER PRIMARY KEY,
+  3      PRODUCT_NAME VARCHAR2(30),
+  4      PRICE NUMBER(10,2),
+  5      STOCK NUMBER,
+  6      CATEGORY_ID NUMBER,
+  7      DESCRIPTION VARCHAR2(50),
+  8      FOREIGN KEY(CATEGORY_ID) REFERENCES CATEGORY(CATEGORY_ID)
+  9  );
+
+Table created.
+
+SQL> INSERT INTO CATEGORY VALUES(1,'FRUITS','Fresh fruits');
+
+1 row created.
+
+SQL> INSERT INTO CATEGORY VALUES(2,'VEGETABLES','Fresh vegetables');
+
+1 row created.
+
+SQL> INSERT INTO CATEGORY VALUES(3,'DAIRY','Milk and dairy products');
+
+1 row created.
+
+SQL> INSERT INTO CATEGORY VALUES(4,'SNACKS','Snacks and biscuits');
+
+1 row created.
+
+SQL> INSERT INTO CATEGORY VALUES(5,'BEVERAGES','Juices and soft drinks');
+
+1 row created.
+
+SQL> SELECT * FROM CATEGORY;
+
+CATEGORY_ID CATEGORY_NAME                  DESCRIPTION
+----------- ------------------------------ ------------------------------
+          1 FRUITS                         Fresh fruits
+          2 VEGETABLES                     Fresh vegetables
+          3 DAIRY                          Milk and dairy products
+          4 SNACKS                         Snacks and biscuits
+          5 BEVERAGES                      Juices and soft drinks
+
+5 rows selected.
+
+SQL> INSERT INTO PRODUCT VALUES(101,'APPLE',120,50,1,'Fresh red apples');
+
+1 row created.
+
+SQL> INSERT INTO PRODUCT VALUES(102,'BANANA',60,80,1,'Fresh bananas');
+
+1 row created.
+
+SQL> INSERT INTO PRODUCT VALUES(103,'TOMATO',40,70,2,'Fresh tomatoes');
+
+1 row created.
+
+SQL> INSERT INTO PRODUCT VALUES(104,'MILK',35,100,3,'Fresh milk');
+
+1 row created.
+
+SQL> INSERT INTO PRODUCT VALUES(105,'BISCUIT',30,60,4,'Cream biscuits');
+
+1 row created.
+
+SELECT * FROM PRODUCT;
+
+PRODUCT_ID PRODUCT_NAME                     PRICE      STOCK CATEGORY_ID
+---------- ------------------------------ ---------- ---------- -----------
+DESCRIPTION
+--------------------------------------------------
+       101 APPLE                              120         50           1
+Fresh red apples
+
+       102 BANANA                              60         80           1
+Fresh bananas
+
+       103 TOMATO                              40         70           2
+Fresh tomatoes
+
+       104 MILK                                35        100           3
+Fresh milk
+
+       105 BISCUIT                             30         60           4
+Cream biscuits
+
+5 rows selected.
+
+
+
+SQL> UPDATE PRODUCT
+  2  SET PRICE = 130
+  3  WHERE PRODUCT_ID = 101;
+
+1 row updated.
+
+SQL> UPDATE PRODUCT
+  2  SET STOCK = 90
+  3  WHERE PRODUCT_ID = 104;
+
+1 row updated.
+
+SQL> DELETE FROM PRODUCT
+  2  WHERE PRODUCT_ID = 105;
+
+1 row deleted.
+
+SQL> SELECT C.CATEGORY_NAME, P.PRODUCT_NAME, P.PRICE, P.STOCK
+  2  FROM CATEGORY C
+  3  JOIN PRODUCT P
+  4  ON C.CATEGORY_ID = P.CATEGORY_ID;
+
+CATEGORY_NAME                  PRODUCT_NAME                        PRICE
+------------------------------ ------------------------------ ----------
+     STOCK
+----------
+FRUITS                         APPLE                                 130
+        50
+
+FRUITS                         BANANA                                 60
+        80
+
+VEGETABLES                     TOMATO                                 40
+        70
+
+
+CATEGORY_NAME                  PRODUCT_NAME                        PRICE
+------------------------------ ------------------------------ ----------
+     STOCK
+----------
+DAIRY                          MILK                                   35
+        90
+
+
+SQL> SELECT P.PRODUCT_NAME, P.PRICE, P.STOCK
+  2  FROM PRODUCT P
+  3  JOIN CATEGORY C
+  4  ON P.CATEGORY_ID = C.CATEGORY_ID
+  5  WHERE C.CATEGORY_NAME = 'FRUITS';
+
+PRODUCT_NAME                        PRICE      STOCK
+------------------------------ ---------- ----------
+APPLE                                 130         50
+BANANA                                 60         80
+
+SQL> SELECT C.CATEGORY_NAME, COUNT(P.PRODUCT_ID) AS TOTAL_PRODUCTS
+  2  FROM CATEGORY C
+  3  LEFT JOIN PRODUCT P
+  4  ON C.CATEGORY_ID = P.CATEGORY_ID
+  5  GROUP BY C.CATEGORY_NAME;
+
+CATEGORY_NAME                  TOTAL_PRODUCTS
+------------------------------ --------------
+FRUITS                                      2
+VEGETABLES                                  1
+DAIRY                                       1
+SNACKS                                      0
+BEVERAGES                                   0
+

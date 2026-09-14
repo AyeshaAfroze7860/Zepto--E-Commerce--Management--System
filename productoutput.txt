@@ -1,0 +1,55 @@
+Table created.
+
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+
+PRODUCT_ID PRODUCT_NAME                     PRICE      STOCK CATEGORY_ID
+---------- ------------------------------ ---------- ---------- -----------
+DESCRIPTION
+--------------------------------------------------
+       101 APPLE                              120         50           1
+Fresh red apples
+
+       102 BANANA                              60         80           1
+Fresh bananas
+
+       103 TOMATO                              40         70           2
+Fresh tomatoes
+
+       104 MILK                                35        100           3
+Fresh milk
+
+       105 BISCUIT                             30         60           4
+Cream biscuits
+
+5 rows selected.
+
+
+1 row updated.
+
+1 row updated.
+
+1 row deleted.
+
+CATEGORY_NAME                  PRODUCT_NAME                        PRICE      STOCK
+------------------------------ ------------------------------ ---------- ----------
+FRUITS                         APPLE                                 130         50
+FRUITS                         BANANA                                 60         80
+VEGETABLES                     TOMATO                                 40         70
+DAIRY                          MILK                                   35         90
+
+PRODUCT_NAME                        PRICE      STOCK
+------------------------------ ---------- ----------
+APPLE                                 130         50
+BANANA                                 60         80
+
+CATEGORY_NAME                  TOTAL_PRODUCTS
+------------------------------ --------------
+FRUITS                                      2
+VEGETABLES                                  1
+DAIRY                                       1
+SNACKS                                      0
+BEVERAGES                                   0
