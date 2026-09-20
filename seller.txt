@@ -1,0 +1,32 @@
+Table created.
+
+1 row created.
+
+1 row created.
+
+1 row created.
+
+1 row created.
+
+1 row created.
+
+SELLER_ID SELLER_NAME                   EMAIL
+--------- ----------------------------- ------------------------------
+PHONE_NUMBER    ADDRESS
+--------------- --------------------------------------------------
+      201 FRESH MART                   freshmart@gmail.com
+9876543210       Anna Nagar, Chennai
+
+      202 DAILY NEEDS                  dailyneeds@gmail.com
+8765432109       Tambaram, Chennai
+
+      203 GREEN STORE                  greenstore@gmail.com
+7986543210       Velachery, Chennai
+
+      204 CITY MART                   citymart@gmail.com
+7654321098       Adyar, Chennai
+
+      205 SMART GROCERY               smartgrocery@gmail.com
+9123456780       T Nagar, Chennai
+
+5 rows selected.

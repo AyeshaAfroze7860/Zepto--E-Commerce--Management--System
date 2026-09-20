@@ -1,0 +1,51 @@
+Table created.
+
+1 row created.
+
+1 row created.
+
+1 row created.
+
+1 row created.
+
+1 row created.
+
+INVENTORY_ID SELLER_ID PRODUCT_ID STOCK_QUANTITY STOCK_STATUS
+------------ --------- ---------- -------------- --------------------
+         301       201        101             50 AVAILABLE
+         302       202        102             80 AVAILABLE
+         303       203        103             70 AVAILABLE
+         304       204        104             90 AVAILABLE
+         305       205        105              0 UNAVAILABLE
+
+5 rows selected.
+
+SELLER_NAME                   PRODUCT_NAME                   STOCK_QUANTITY
+----------------------------- ------------------------------ --------------
+STOCK_STATUS
+--------------------
+FRESH MART                    APPLE                                      50
+AVAILABLE
+
+DAILY NEEDS                   BANANA                                     80
+AVAILABLE
+
+GREEN STORE                   TOMATO                                     70
+AVAILABLE
+
+CITY MART                     MILK                                       90
+AVAILABLE
+
+SMART GROCERY                 BISCUIT                                     0
+UNAVAILABLE
+
+PRODUCT_NAME                   STOCK_QUANTITY STOCK_STATUS
+------------------------------ -------------- --------------------
+APPLE                                      50 AVAILABLE
+BANANA                                     80 AVAILABLE
+TOMATO                                     70 AVAILABLE
+MILK                                       90 AVAILABLE
+
+PRODUCT_NAME                   STOCK_QUANTITY STOCK_STATUS
+------------------------------ -------------- --------------------
+BISCUIT                                       0 UNAVAILABLE
