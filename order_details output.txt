@@ -1,0 +1,76 @@
+Table created.
+
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+
+ORDER_DETAIL_ID   ORDER_ID PRODUCT_ID   QUANTITY      PRICE TOTAL_PRICE
+--------------- ---------- ---------- ---------- ---------- -----------
+501                    401        101          1        130         130
+502                    401        102          1         60          60
+503                    402        102          2         60         120
+504                    403        103          2         40          80
+505                    403        104          2         30          60
+506                    404        104          3         35         105
+507                    405        102          1         60          60
+
+7 rows selected.
+
+
+CUSTOMER_NAME          ORDER_ID ORDER_DAT PRODUCT_NAME
+-------------------- ---------- --------- ------------------------------
+  QUANTITY      PRICE TOTAL_PRICE ORDER_STATUS
+---------- ---------- ----------- --------------------
+AKSHAYA                     405 24-SEP-26 BANANA
+         1         60          60 PROCESSING
+
+AYESHA                      401 20-SEP-26 BANANA
+         1         60          60 DELIVERED
+
+AYESHA                      401 20-SEP-26 APPLE
+         1        130         130 DELIVERED
+
+
+CUSTOMER_NAME          ORDER_ID ORDER_DAT PRODUCT_NAME
+-------------------- ---------- --------- ------------------------------
+  QUANTITY      PRICE TOTAL_PRICE ORDER_STATUS
+---------- ---------- ----------- --------------------
+POOJA                       402 21-SEP-26 BANANA
+         2         60         120 SHIPPED
+
+RIYAVALLI                   404 23-SEP-26 MILK
+         3         35         105 DELIVERED
+
+SHINY                       403 22-SEP-26 TOMATO
+         2         40          80 SHIPPED
+
+
+CUSTOMER_NAME          ORDER_ID ORDER_DAT PRODUCT_NAME
+-------------------- ---------- --------- ------------------------------
+  QUANTITY      PRICE TOTAL_PRICE ORDER_STATUS
+---------- ---------- ----------- --------------------
+SHINY                       403 22-SEP-26 MILK
+         2         30          60 SHIPPED
+
+
+7 rows selected.
+
+Customer-Wise Order Count
+
+CUSTOMER_NAME        TOTAL_ORDERS
+-------------------- ------------
+AYESHA                          1
+POOJA                           1
+SHINY                           1
+RIYAVALLI                       1
+AKSHAYA                         1
+ASHWINI                         0
+BHAVADHARANI                    0
+RUPA                            0
+VARALAKSMI                      0
+
+9 rows selected.

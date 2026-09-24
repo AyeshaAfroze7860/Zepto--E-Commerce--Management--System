@@ -1,0 +1,29 @@
+Table created.
+
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+
+ORDER_ID CUSTOMER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+---------- ----------- --------- ------------ --------------------
+401         101         20-SEP-26          180 DELIVERED
+402         102         21-SEP-26          120 PROCESSING
+403         103         22-SEP-26          140 SHIPPED
+404         104         23-SEP-26          105 DELIVERED
+405         105         24-SEP-26           60 PROCESSING
+
+5 rows selected.
+
+1 row updated.
+
+1 row updated.
+
+CUSTOMER_NAME          ORDER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+-------------------- ---------- --------- ------------ --------------------
+AYESHA                      401 20-SEP-26          180 DELIVERED
+POOJA                       402 21-SEP-26          120 SHIPPED
+SHINY                       403 22-SEP-26          140 SHIPPED
+RIYAVALLI                   404 23-SEP-26          105 DELIVERED
+AKSHAYA                     405 24-SEP-26          120 PROCESSING

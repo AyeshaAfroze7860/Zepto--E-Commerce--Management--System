@@ -1,0 +1,604 @@
+ CREATE TABLE CATEGORY(
+  2      CATEGORY_ID NUMBER PRIMARY KEY,
+  3      CATEGORY_NAME VARCHAR2(30),
+  4      DESCRIPTION VARCHAR2(50)
+  5  );
+
+Table created.
+
+SQL> CREATE TABLE PRODUCT(
+  2      PRODUCT_ID NUMBER PRIMARY KEY,
+  3      PRODUCT_NAME VARCHAR2(30),
+  4      PRICE NUMBER(10,2),
+  5      STOCK NUMBER,
+  6      CATEGORY_ID NUMBER,
+  7      DESCRIPTION VARCHAR2(50),
+  8      FOREIGN KEY(CATEGORY_ID) REFERENCES CATEGORY(CATEGORY_ID)
+  9  );
+
+Table created.
+
+SQL> INSERT INTO CATEGORY VALUES(1,'FRUITS','Fresh fruits');
+
+1 row created.
+
+SQL> INSERT INTO CATEGORY VALUES(2,'VEGETABLES','Fresh vegetables');
+
+1 row created.
+
+SQL> INSERT INTO CATEGORY VALUES(3,'DAIRY','Milk and dairy products');
+
+1 row created.
+
+SQL> INSERT INTO CATEGORY VALUES(4,'SNACKS','Snacks and biscuits');
+
+1 row created.
+
+SQL> INSERT INTO CATEGORY VALUES(5,'BEVERAGES','Juices and soft drinks');
+
+1 row created.
+
+SQL> SELECT * FROM CATEGORY;
+
+CATEGORY_ID CATEGORY_NAME                  DESCRIPTION
+----------- ------------------------------ ------------------------------
+          1 FRUITS                         Fresh fruits
+          2 VEGETABLES                     Fresh vegetables
+          3 DAIRY                          Milk and dairy products
+          4 SNACKS                         Snacks and biscuits
+          5 BEVERAGES                      Juices and soft drinks
+
+5 rows selected.
+
+SQL> INSERT INTO PRODUCT VALUES(101,'APPLE',120,50,1,'Fresh red apples');
+
+1 row created.
+
+SQL> INSERT INTO PRODUCT VALUES(102,'BANANA',60,80,1,'Fresh bananas');
+
+1 row created.
+
+SQL> INSERT INTO PRODUCT VALUES(103,'TOMATO',40,70,2,'Fresh tomatoes');
+
+1 row created.
+
+SQL> INSERT INTO PRODUCT VALUES(104,'MILK',35,100,3,'Fresh milk');
+
+1 row created.
+
+SQL> INSERT INTO PRODUCT VALUES(105,'BISCUIT',30,60,4,'Cream biscuits');
+
+1 row created.
+
+SELECT * FROM PRODUCT;
+
+PRODUCT_ID PRODUCT_NAME                     PRICE      STOCK CATEGORY_ID
+---------- ------------------------------ ---------- ---------- -----------
+DESCRIPTION
+--------------------------------------------------
+       101 APPLE                              120         50           1
+Fresh red apples
+
+       102 BANANA                              60         80           1
+Fresh bananas
+
+       103 TOMATO                              40         70           2
+Fresh tomatoes
+
+       104 MILK                                35        100           3
+Fresh milk
+
+       105 BISCUIT                             30         60           4
+Cream biscuits
+
+5 rows selected.
+
+
+
+SQL> UPDATE PRODUCT
+  2  SET PRICE = 130
+  3  WHERE PRODUCT_ID = 101;
+
+1 row updated.
+
+SQL> UPDATE PRODUCT
+  2  SET STOCK = 90
+  3  WHERE PRODUCT_ID = 104;
+
+1 row updated.
+
+SQL> DELETE FROM PRODUCT
+  2  WHERE PRODUCT_ID = 105;
+
+1 row deleted.
+
+SQL> SELECT C.CATEGORY_NAME, P.PRODUCT_NAME, P.PRICE, P.STOCK
+  2  FROM CATEGORY C
+  3  JOIN PRODUCT P
+  4  ON C.CATEGORY_ID = P.CATEGORY_ID;
+
+CATEGORY_NAME                  PRODUCT_NAME                        PRICE
+------------------------------ ------------------------------ ----------
+     STOCK
+----------
+FRUITS                         APPLE                                 130
+        50
+
+FRUITS                         BANANA                                 60
+        80
+
+VEGETABLES                     TOMATO                                 40
+        70
+
+
+CATEGORY_NAME                  PRODUCT_NAME                        PRICE
+------------------------------ ------------------------------ ----------
+     STOCK
+----------
+DAIRY                          MILK                                   35
+        90
+
+
+SQL> SELECT P.PRODUCT_NAME, P.PRICE, P.STOCK
+  2  FROM PRODUCT P
+  3  JOIN CATEGORY C
+  4  ON P.CATEGORY_ID = C.CATEGORY_ID
+  5  WHERE C.CATEGORY_NAME = 'FRUITS';
+
+PRODUCT_NAME                        PRICE      STOCK
+------------------------------ ---------- ----------
+APPLE                                 130         50
+BANANA                                 60         80
+
+SQL> SELECT C.CATEGORY_NAME, COUNT(P.PRODUCT_ID) AS TOTAL_PRODUCTS
+  2  FROM CATEGORY C
+  3  LEFT JOIN PRODUCT P
+  4  ON C.CATEGORY_ID = P.CATEGORY_ID
+  5  GROUP BY C.CATEGORY_NAME;
+
+CATEGORY_NAME                  TOTAL_PRODUCTS
+------------------------------ --------------
+FRUITS                                      2
+VEGETABLES                                  1
+DAIRY                                       1
+SNACKS                                      0
+BEVERAGES                                   0
+
+
+SQL> CREATE TABLE SELLER(
+  2      SELLER_ID NUMBER PRIMARY KEY,
+  3      SELLER_NAME VARCHAR2(30),
+  4      EMAIL VARCHAR2(30),
+  5      PHONE_NUMBER VARCHAR2(15),
+  6      ADDRESS VARCHAR2(80)
+  7  );
+
+Table created.
+
+SQL> CREATE TABLE INVENTORY(
+  2      INVENTORY_ID NUMBER PRIMARY KEY,
+  3      SELLER_ID NUMBER,
+  4      PRODUCT_ID NUMBER,
+  5      STOCK_QUANTITY NUMBER,
+  6      STOCK_STATUS VARCHAR2(20),
+  7      FOREIGN KEY(SELLER_ID) REFERENCES SELLER(SELLER_ID),
+  8      FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(PRODUCT_ID)
+  9  );
+
+Table created.
+
+SQL> INSERT INTO SELLER VALUES(201,'FRESH MART','freshmart@gmail.com','9876543210','Anna Nagar, Chennai');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO SELLER VALUES(202,'DAILY NEEDS','dailyneeds@gmail.com','8765432109','Tambaram, Chennai');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO SELLER VALUES(203,'GREEN STORE','greenstore@gmail.com','7986543210','Velachery, Chennai');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO SELLER VALUES(204,'CITY MART','citymart@gmail.com','7654321098','Adyar, Chennai');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO SELLER VALUES(205,'SMART GROCERY','smartgrocery@gmail.com','9123456780','T Nagar, Chennai');
+
+1 row created.
+
+SQL> INSERT INTO PRODUCT
+  2  VALUES(105,'BISCUIT',30,0,4,'Cream biscuits');
+
+1 row created.
+
+SQL> INSERT INTO INVENTORY VALUES(301,201,101,50,'AVAILABLE');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO INVENTORY VALUES(302,202,102,80,'AVAILABLE');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO INVENTORY VALUES(303,203,103,70,'AVAILABLE');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO INVENTORY VALUES(304,204,104,90,'AVAILABLE');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO INVENTORY VALUES(305,205,105,0,'UNAVAILABLE');
+
+1 row created.
+
+SQL> SELECT S.SELLER_NAME,
+  2         P.PRODUCT_NAME,
+  3         I.STOCK_QUANTITY,
+  4         I.STOCK_STATUS
+  5  FROM SELLER S
+  6  JOIN INVENTORY I
+  7  ON S.SELLER_ID = I.SELLER_ID
+  8  JOIN PRODUCT P
+  9  ON I.PRODUCT_ID = P.PRODUCT_ID;
+
+SELLER_NAME                    PRODUCT_NAME                   STOCK_QUANTITY
+------------------------------ ------------------------------ --------------
+STOCK_STATUS
+--------------------
+FRESH MART                     APPLE                                      50
+AVAILABLE
+
+DAILY NEEDS                    BANANA                                     80
+AVAILABLE
+
+GREEN STORE                    TOMATO                                     70
+AVAILABLE
+
+
+SELLER_NAME                    PRODUCT_NAME                   STOCK_QUANTITY
+------------------------------ ------------------------------ --------------
+STOCK_STATUS
+--------------------
+CITY MART                      MILK                                       90
+AVAILABLE
+
+SMART GROCERY                  BISCUIT                                     0
+UNAVAILABLE
+
+
+SQL> SELECT P.PRODUCT_NAME,
+  2         I.STOCK_QUANTITY,
+  3         I.STOCK_STATUS
+  4  FROM PRODUCT P
+  5  JOIN INVENTORY I
+  6  ON P.PRODUCT_ID = I.PRODUCT_ID
+  7  WHERE I.STOCK_STATUS = 'AVAILABLE';
+
+PRODUCT_NAME                   STOCK_QUANTITY STOCK_STATUS
+------------------------------ -------------- --------------------
+APPLE                                      50 AVAILABLE
+BANANA                                     80 AVAILABLE
+TOMATO                                     70 AVAILABLE
+MILK                                       90 AVAILABLE
+
+SQL> SELECT P.PRODUCT_NAME,
+  2         I.STOCK_QUANTITY,
+  3         I.STOCK_STATUS
+  4  FROM PRODUCT P
+  5  JOIN INVENTORY I
+  6  ON P.PRODUCT_ID = I.PRODUCT_ID
+  7  WHERE I.STOCK_STATUS = 'UNAVAILABLE';
+
+PRODUCT_NAME                   STOCK_QUANTITY STOCK_STATUS
+------------------------------ -------------- --------------------
+BISCUIT                                     0 UNAVAILABLE
+
+SQL> SELECT S.SELLER_NAME,
+  2         P.PRODUCT_NAME,
+  3         I.STOCK_QUANTITY,
+  4         I.STOCK_STATUS
+  5  FROM SELLER S
+  6  JOIN INVENTORY I
+  7  ON S.SELLER_ID = I.SELLER_ID
+  8  JOIN PRODUCT P
+  9  ON I.PRODUCT_ID = P.PRODUCT_ID
+ 10  ORDER BY I.STOCK_STATUS, S.SELLER_NAME;
+
+SELLER_NAME                    PRODUCT_NAME                   STOCK_QUANTITY
+------------------------------ ------------------------------ --------------
+STOCK_STATUS
+--------------------
+CITY MART                      MILK                                       90
+AVAILABLE
+
+DAILY NEEDS                    BANANA                                     80
+AVAILABLE
+
+FRESH MART                     APPLE                                      50
+AVAILABLE
+
+
+SELLER_NAME                    PRODUCT_NAME                   STOCK_QUANTITY
+------------------------------ ------------------------------ --------------
+STOCK_STATUS
+--------------------
+GREEN STORE                    TOMATO                                     70
+AVAILABLE
+
+SMART GROCERY                  BISCUIT                                     0
+UNAVAILABLE
+
+SQL> SELECT * FROM SELLER;
+
+ SELLER_ID SELLER_NAME                    EMAIL
+---------- ------------------------------ ------------------------------
+PHONE_NUMBER
+---------------
+ADDRESS
+--------------------------------------------------------------------------------
+       201 FRESH MART                     freshmart@gmail.com
+9876543210
+Anna Nagar, Chennai
+
+       202 DAILY NEEDS                    dailyneeds@gmail.com
+8765432109
+Tambaram, Chennai
+
+ SELLER_ID SELLER_NAME                    EMAIL
+---------- ------------------------------ ------------------------------
+PHONE_NUMBER
+---------------
+ADDRESS
+--------------------------------------------------------------------------------
+
+       203 GREEN STORE                    greenstore@gmail.com
+7986543210
+Velachery, Chennai
+
+       204 CITY MART                      citymart@gmail.com
+7654321098
+
+ SELLER_ID SELLER_NAME                    EMAIL
+---------- ------------------------------ ------------------------------
+PHONE_NUMBER
+---------------
+ADDRESS
+--------------------------------------------------------------------------------
+Adyar, Chennai
+
+       205 SMART GROCERY                  smartgrocery@gmail.com
+9123456780
+T Nagar, Chennai
+
+
+SQL> SELECT * FROM INVENTORY;
+
+INVENTORY_ID  SELLER_ID PRODUCT_ID STOCK_QUANTITY STOCK_STATUS
+------------ ---------- ---------- -------------- --------------------
+         301        201        101             50 AVAILABLE
+         302        202        102             80 AVAILABLE
+         303        203        103             70 AVAILABLE
+         304        204        104             90 AVAILABLE
+         305        205        105              0 UNAVAILABLE
+
+SQL>SQL> CREATE TABLE ORDERS(
+  2      ORDER_ID NUMBER PRIMARY KEY,
+  3      CUSTOMER_ID NUMBER,
+  4      ORDER_DATE DATE,
+  5      TOTAL_AMOUNT NUMBER(10,2),
+  6      ORDER_STATUS VARCHAR2(20),
+  7      FOREIGN KEY(CUSTOMER_ID) REFERENCES CUSTOMER(CUSTOMER_ID)
+  8  );
+
+Table created.
+
+SQL> CREATE TABLE ORDER_DETAILS(
+  2      ORDER_DETAIL_ID NUMBER PRIMARY KEY,
+  3      ORDER_ID NUMBER,
+  4      PRODUCT_ID NUMBER,
+  5      QUANTITY NUMBER,
+  6      PRICE NUMBER(10,2),
+  7      TOTAL_PRICE NUMBER(10,2),
+  8      FOREIGN KEY(ORDER_ID) REFERENCES ORDERS(ORDER_ID),
+  9      FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(PRODUCT_ID)
+ 10  );
+
+Table created.
+
+SQL> INSERT INTO ORDERS VALUES(401,101,TO_DATE('20-09-2026','DD-MM-YYYY'),180,'DELIVERED');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO ORDERS VALUES(402,102,TO_DATE('21-09-2026','DD-MM-YYYY'),120,'PROCESSING');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO ORDERS VALUES(403,103,TO_DATE('22-09-2026','DD-MM-YYYY'),140,'SHIPPED');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO ORDERS VALUES(404,104,TO_DATE('23-09-2026','DD-MM-YYYY'),105,'DELIVERED');
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO ORDERS VALUES(405,105,TO_DATE('24-09-2026','DD-MM-YYYY'),60,'PROCESSING');
+
+1 row created.
+
+SQL> INSERT INTO ORDER_DETAILS VALUES(501,401,101,1,130,130);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO ORDER_DETAILS VALUES(502,401,102,1,60,60);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO ORDER_DETAILS VALUES(503,402,102,2,60,120);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO ORDER_DETAILS VALUES(504,403,103,2,40,80);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO ORDER_DETAILS VALUES(505,403,104,2,30,60);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO ORDER_DETAILS VALUES(506,404,104,3,35,105);
+
+1 row created.
+
+SQL>
+SQL> INSERT INTO ORDER_DETAILS VALUES(507,405,102,1,60,60);
+
+1 row created.
+
+SQL> SELECT * FROM ORDERS;
+
+  ORDER_ID CUSTOMER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+---------- ----------- --------- ------------ --------------------
+       401         101 20-SEP-26          180 DELIVERED
+       402         102 21-SEP-26          120 PROCESSING
+       403         103 22-SEP-26          140 SHIPPED
+       404         104 23-SEP-26          105 DELIVERED
+       405         105 24-SEP-26           60 PROCESSING
+
+SQL> SELECT * FROM ORDER_DETAILS;
+
+ORDER_DETAIL_ID   ORDER_ID PRODUCT_ID   QUANTITY      PRICE TOTAL_PRICE
+--------------- ---------- ---------- ---------- ---------- -----------
+            501        401        101          1        130         130
+            502        401        102          1         60          60
+            503        402        102          2         60         120
+            504        403        103          2         40          80
+            505        403        104          2         30          60
+            506        404        104          3         35         105
+            507        405        102          1         60          60
+
+7 rows selected.
+
+SQL> SELECT C.CUSTOMER_NAME,
+  2         O.ORDER_ID,
+  3         O.ORDER_DATE,
+  4         O.TOTAL_AMOUNT,
+  5         O.ORDER_STATUS
+  6  FROM CUSTOMER C
+  7  JOIN ORDERS O
+  8  ON C.CUSTOMER_ID = O.CUSTOMER_ID;
+
+CUSTOMER_NAME          ORDER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+-------------------- ---------- --------- ------------ --------------------
+AYESHA                      401 20-SEP-26          180 DELIVERED
+POOJA                       402 21-SEP-26          120 PROCESSING
+SHINY                       403 22-SEP-26          140 SHIPPED
+RIYAVALLI                   404 23-SEP-26          105 DELIVERED
+AKSHAYA                     405 24-SEP-26           60 PROCESSING
+
+SQL> UPDATE ORDERS
+  2  SET ORDER_STATUS = 'SHIPPED'
+  3  WHERE ORDER_ID = 402;
+
+1 row updated.
+
+SQL> UPDATE ORDERS
+  2  SET TOTAL_AMOUNT = 120
+  3  WHERE ORDER_ID = 405;
+
+1 row updated.
+
+SQL> SELECT C.CUSTOMER_NAME,
+  2         O.ORDER_ID,
+  3         O.ORDER_DATE,
+  4         P.PRODUCT_NAME,
+  5         OD.QUANTITY,
+  6         OD.PRICE,
+  7         OD.TOTAL_PRICE,
+  8         O.ORDER_STATUS
+  9  FROM CUSTOMER C
+ 10  JOIN ORDERS O
+ 11  ON C.CUSTOMER_ID = O.CUSTOMER_ID
+ 12  JOIN ORDER_DETAILS OD
+ 13  ON O.ORDER_ID = OD.ORDER_ID
+ 14  JOIN PRODUCT P
+ 15  ON OD.PRODUCT_ID = P.PRODUCT_ID
+ 16  ORDER BY C.CUSTOMER_NAME, O.ORDER_DATE;
+
+CUSTOMER_NAME          ORDER_ID ORDER_DAT PRODUCT_NAME
+-------------------- ---------- --------- ------------------------------
+  QUANTITY      PRICE TOTAL_PRICE ORDER_STATUS
+---------- ---------- ----------- --------------------
+AKSHAYA                     405 24-SEP-26 BANANA
+         1         60          60 PROCESSING
+
+AYESHA                      401 20-SEP-26 BANANA
+         1         60          60 DELIVERED
+
+AYESHA                      401 20-SEP-26 APPLE
+         1        130         130 DELIVERED
+
+
+CUSTOMER_NAME          ORDER_ID ORDER_DAT PRODUCT_NAME
+-------------------- ---------- --------- ------------------------------
+  QUANTITY      PRICE TOTAL_PRICE ORDER_STATUS
+---------- ---------- ----------- --------------------
+POOJA                       402 21-SEP-26 BANANA
+         2         60         120 SHIPPED
+
+RIYAVALLI                   404 23-SEP-26 MILK
+         3         35         105 DELIVERED
+
+SHINY                       403 22-SEP-26 TOMATO
+         2         40          80 SHIPPED
+
+
+CUSTOMER_NAME          ORDER_ID ORDER_DAT PRODUCT_NAME
+-------------------- ---------- --------- ------------------------------
+  QUANTITY      PRICE TOTAL_PRICE ORDER_STATUS
+---------- ---------- ----------- --------------------
+SHINY                       403 22-SEP-26 MILK
+         2         30          60 SHIPPED
+
+
+7 rows selected.
+
+SQL> SELECT C.CUSTOMER_NAME,
+  2         COUNT(O.ORDER_ID) AS TOTAL_ORDERS
+  3  FROM CUSTOMER C
+  4  LEFT JOIN ORDERS O
+  5  ON C.CUSTOMER_ID = O.CUSTOMER_ID
+  6  GROUP BY C.CUSTOMER_NAME;
+
+CUSTOMER_NAME        TOTAL_ORDERS
+-------------------- ------------
+AYESHA                          1
+POOJA                           1
+SHINY                           1
+RIYAVALLI                       1
+AKSHAYA                         1
+ASHWINI                         0
+BHAVADHARANI                    0
+RUPA                            0
+VARALAKSMI                      0
+
+9 rows selected.
+
+SQL>
