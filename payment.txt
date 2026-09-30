@@ -1,0 +1,111 @@
+Table created.
+
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+
+PAYMENT_ID   ORDER_ID PAYMENT_D PAYMENT_MODE                   PAYMENT_AMOUNT
+---------- ---------- --------- ------------------------------ --------------
+PAYMENT_STATUS
+--------------------
+       601        401 20-SEP-26 UPI                                       180
+SUCCESS
+
+       602        402 21-SEP-26 CREDIT CARD                               120
+SUCCESS
+
+       603        403 22-SEP-26 DEBIT CARD                                140
+FAILED
+
+
+PAYMENT_ID   ORDER_ID PAYMENT_D PAYMENT_MODE                   PAYMENT_AMOUNT
+---------- ---------- --------- ------------------------------ --------------
+PAYMENT_STATUS
+--------------------
+       604        404 23-SEP-26 CASH ON DELIVERY                          105
+PENDING
+
+       605        405 24-SEP-26 UPI                                       120
+SUCCESS
+
+
+PAYMENT_ID   ORDER_ID PAYMENT_MODE                   PAYMENT_AMOUNT
+---------- ---------- ------------------------------ --------------
+PAYMENT_STATUS
+--------------------
+       601        401 UPI                                       180
+SUCCESS
+
+       602        402 CREDIT CARD                               120
+SUCCESS
+
+       605        405 UPI                                       120
+SUCCESS
+
+
+PAYMENT_ID   ORDER_ID PAYMENT_MODE                   PAYMENT_AMOUNT
+---------- ---------- ------------------------------ --------------
+PAYMENT_STATUS
+--------------------
+       603        403 DEBIT CARD                                140
+FAILED
+
+       604        404 CASH ON DELIVERY                          105
+PENDING
+
+PAYMENT_MODE                   TOTAL_TRANSACTIONS
+------------------------------ ------------------
+UPI                                             2
+CREDIT CARD                                     1
+DEBIT CARD                                      1
+CASH ON DELIVERY                                1
+
+PAYMENT_ID   ORDER_ID ORDER_DAT PAYMENT_MODE                   PAYMENT_AMOUNT
+---------- ---------- --------- ------------------------------ --------------
+PAYMENT_STATUS
+--------------------
+       601        401 20-SEP-26 UPI                                       180
+SUCCESS
+
+       602        402 21-SEP-26 CREDIT CARD                               120
+SUCCESS
+
+       603        403 22-SEP-26 DEBIT CARD                                140
+FAILED
+
+
+PAYMENT_ID   ORDER_ID ORDER_DAT PAYMENT_MODE                   PAYMENT_AMOUNT
+---------- ---------- --------- ------------------------------ --------------
+PAYMENT_STATUS
+--------------------
+       604        404 23-SEP-26 CASH ON DELIVERY                          105
+PENDING
+
+       605        405 24-SEP-26 UPI                                       120
+SUCCESS
+
+CUSTOMER_NAME          ORDER_ID PAYMENT_MODE                   PAYMENT_AMOUNT
+-------------------- ---------- ------------------------------ --------------
+PAYMENT_STATUS
+--------------------
+AKSHAYA                     405 UPI                                       120
+SUCCESS
+
+AYESHA                      401 UPI                                       180
+SUCCESS
+
+POOJA                       402 CREDIT CARD                               120
+SUCCESS
+
+
+CUSTOMER_NAME          ORDER_ID PAYMENT_MODE                   PAYMENT_AMOUNT
+-------------------- ---------- ------------------------------ --------------
+PAYMENT_STATUS
+--------------------
+RIYAVALLI                   404 CASH ON DELIVERY                          105
+PENDING
+
+SHINY                       403 DEBIT CARD                                140
+FAILED
