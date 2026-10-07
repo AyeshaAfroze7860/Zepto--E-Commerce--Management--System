@@ -1,0 +1,34 @@
+Table created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+ RATING_ID  REVIEW_ID RATING_VALUE
+---------- ---------- ------------
+       801        701            5
+       802        702            4
+       803        703            3
+       804        704            5
+       805        705            4
+
+PRODUCT_NAME                   AVERAGE_RATING
+------------------------------ --------------
+APPLE                                       5
+BANANA                                      4
+BISCUIT                                     4
+MILK                                        5
+TOMATO                                      3
+PRODUCT_NAME                   AVERAGE_RATING
+------------------------------ --------------
+MILK                                        5
+APPLE                                       5
+BISCUIT                                     4
+BANANA                                      4
+
+RATING_VALUE TOTAL_REVIEWS
+------------ -------------
+           5             2
+           4             2
+           3             1
+           

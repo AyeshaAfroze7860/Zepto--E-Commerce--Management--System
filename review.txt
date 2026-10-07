@@ -1,0 +1,87 @@
+Table created.
+
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+1 row created.
+
+ REVIEW_ID CUSTOMER_ID PRODUCT_ID
+---------- ----------- ----------
+REVIEW_TEXT
+--------------------------------------------------------------------------------
+REVIEW_DA
+---------
+       701         101        101
+Fresh and good quality apple
+25-SEP-26
+
+       702         102        102
+Bananas were fresh
+26-SEP-26
+
+ REVIEW_ID CUSTOMER_ID PRODUCT_ID
+---------- ----------- ----------
+REVIEW_TEXT
+--------------------------------------------------------------------------------
+REVIEW_DA
+---------
+
+       703         103        103
+Tomatoes were good
+27-SEP-26
+
+       704         104        104
+Milk was fresh
+
+ REVIEW_ID CUSTOMER_ID PRODUCT_ID
+---------- ----------- ----------
+REVIEW_TEXT
+--------------------------------------------------------------------------------
+REVIEW_DA
+---------
+28-SEP-26
+
+       705         105        105
+Biscuits were tasty
+29-SEP-26
+
+CUSTOMER_NAME        PRODUCT_NAME
+-------------------- ------------------------------
+REVIEW_TEXT
+--------------------------------------------------------------------------------
+RATING_VALUE REVIEW_DA
+------------ ---------
+AYESHA               APPLE
+Fresh and good quality apple
+           5 25-SEP-26
+
+POOJA                BANANA
+Bananas were fresh
+           4 26-SEP-26
+
+CUSTOMER_NAME        PRODUCT_NAME
+-------------------- ------------------------------
+REVIEW_TEXT
+--------------------------------------------------------------------------------
+RATING_VALUE REVIEW_DA
+------------ ---------
+
+SHINY                TOMATO
+Tomatoes were good
+           3 27-SEP-26
+
+RIYAVALLI            MILK
+Milk was fresh
+
+CUSTOMER_NAME        PRODUCT_NAME
+-------------------- ------------------------------
+REVIEW_TEXT
+--------------------------------------------------------------------------------
+RATING_VALUE REVIEW_DA
+------------ ---------
+           5 28-SEP-26
+
+AKSHAYA              BISCUIT
+Biscuits were tasty
+           4 29-SEP-26
